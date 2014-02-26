@@ -105,7 +105,8 @@ describe('MemoryReportingStore', function(){
 		}, function sortBySurnameDescending(bookA, bookB){
 			return (bookA.authorSurname > bookB.authorSurname) ? -1 : 1;
 		});
-		console.log(booksWithAuthorSurnames);
+		assert.strictEqual(booksWithAuthorSurnames[0].authorSurname, 'Pratchett');
+		assert.strictEqual(booksWithAuthorSurnames[1].authorSurname, 'Adams');
 	});
 	it('should erase a value from memory', function(){
 		var store = new MemoryReportingStore();
